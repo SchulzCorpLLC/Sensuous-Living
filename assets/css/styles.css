@@ -1,0 +1,484 @@
+/* Feminine Sensuality - styles.css
+   ---
+   A pure CSS stylesheet designed for elegance, soulfulness, and responsiveness.
+   No frameworks, no libraries.
+*/
+
+/* --- CSS Variables (Brand Blueprint) --- */
+:root {
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Lato', sans-serif;
+
+    --color-background: #FFF8F2; /* Soft Blush Ivory */
+    --color-text: #2E1E13; /* Earth Brown */
+    --color-accent1: #D6C2F1; /* Lavender Mist */
+    --color-accent2: #D1B271; /* Antique Gold */
+    --color-button: #7C5D92; /* Smoky Amethyst */
+    --color-white: #FFFFFF;
+
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- Global Styles & Reset --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* This ensures content is not hidden behind the fixed header */
+    padding-top: 80px; /* Adjust this value based on the actual height of your header */
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 5vw, 3rem); }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+    margin-bottom: 1rem;
+    max-width: 70ch;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+/* --- Layout & Sections --- */
+.content-section {
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 1rem;
+    color: var(--color-button);
+}
+
+.section-intro-text {
+    font-size: 1.15rem;
+    color: #5c4a3e;
+    margin-bottom: 3rem;
+}
+
+/* --- Header & Navigation (from Component) --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 248, 242, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+    height: 80px; /* Giving the header a fixed height */
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.navbar-brand a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-button);
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.lang-switcher a {
+    margin: 0 0.25rem;
+    font-weight: 700;
+}
+
+.lang-switcher a.active {
+    color: var(--color-button);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-text);
+    margin: 5px 0;
+    transition: var(--transition-smooth);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    /* Adjust height calculation to account for the fixed header */
+    min-height: calc(100vh - 80px); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden; /* Ensures video doesn't spill out */
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    object-fit: cover; /* Ensures the video covers the area without distortion */
+}
+
+.hero-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 30, 19, 0.4); /* Earth Brown overlay for readability */
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3; /* Ensures content is above the video and overlay */
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-title, .hero-subtitle {
+    color: var(--color-white); /* Change text to white for contrast */
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin: 1rem 0 2rem;
+}
+
+/* --- Buttons & Links --- */
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--color-button);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(124, 93, 146, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(124, 93, 146, 0.5); /* "Glow" effect */
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-button);
+    border: 1px solid var(--color-button);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-button);
+    color: var(--color-white);
+}
+
+.link-arrow {
+    color: var(--color-button);
+    font-weight: 700;
+}
+
+.link-arrow:hover {
+    letter-spacing: 1px;
+}
+
+/* --- Offerings Section --- */
+.offerings-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.offering-card {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 2.5rem;
+    text-align: left;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.offering-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(46, 30, 19, 0.08);
+    border-color: var(--color-accent1);
+}
+
+.offering-card h3 {
+    color: var(--color-button);
+    margin-bottom: 1rem;
+}
+
+/* --- Blog Preview Section --- */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.article-card {
+    text-align: left;
+    padding: 2rem;
+    border-bottom: 1px solid var(--color-accent1);
+    transition: var(--transition-smooth);
+}
+
+.article-card:hover {
+    background-color: rgba(214, 194, 241, 0.1);
+    border-color: var(--color-button);
+}
+
+.article-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Newsletter CTA --- */
+.newsletter-cta-section {
+    background-color: #EADFF2; /* Lighter Lavender */
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.newsletter-form {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    min-width: 300px;
+    padding: 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--color-accent1);
+    background-color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--color-button);
+    box-shadow: 0 0 10px rgba(124, 93, 146, 0.2);
+}
+
+/* --- Footer (from Component) --- */
+.main-footer-section {
+    background-color: #f5ede6;
+    padding: 4rem 2rem 1rem;
+    color: #5c4a3e;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    text-align: left;
+}
+
+.footer-content h3, .footer-content h4 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.footer-content ul {
+    list-style: none;
+}
+
+.footer-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-content a:hover {
+    color: var(--color-button);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid var(--color-accent1);
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .nav-links-wrapper {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-background);
+        transform: translateX(100%);
+        transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links-wrapper.nav-active {
+        transform: translateX(0);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .lang-switcher {
+        display: none; /* Simplification for mobile menu */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Adjust for potentially smaller header */
+    }
+
+    .main-header {
+        height: 70px;
+    }
+
+    .content-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .offerings-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
