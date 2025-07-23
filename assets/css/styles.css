@@ -1,0 +1,1178 @@
+/* ---
+   styles.css
+   Feminine Sensuality - Spiritual & Meditative Redesign
+   LAVENDER VIBRANCY PALETTE - ELEVATED BY A MASTER
+   --- */
+
+/* --- 1. Root & High-Vibration Lavender Palette --- */
+:root {
+    /* Backgrounds - Ethereal & Soft */
+    --color-background: #F9F7FD;      /* Lavender Whisper - A soft, almost-white base */
+    --color-background-2: #EFEBF5;    /* Soft Lavender Haze - For subtle depth */
+    --color-background-3: #DCD0E8;    /* Muted Thistle - For distinct sections */
+    
+    /* Text - Rich & Grounding */
+    --color-text: #49375B;            /* Deep Amethyst - For primary headings & high contrast */
+    --color-text-2: #6D5B87;          /* Wisteria - For subheadings and softer text */
+    --color-text-3: #9B86B5;          /* Heather - For tertiary text or accents */
+    --color-text-4: #362A42;          /* Near-Black Purple - For body copy on light backgrounds */
+
+    /* Accents - Gilded & Vibrant */
+    --color-gold: #D4B76A;            /* Gilded Gold - A sophisticated, warm metallic */
+    --color-accent-peach: #FADADD;    /* Rosewater - A delicate touch of warmth */
+    --color-amethyst: #8A5DB3;        /* Vibrant Amethyst - For CTAs and highlights */
+    --color-lavender: #C5A9E8;        /* Classic Lavender - The heart of the palette */
+
+    --font-primary: 'Cormorant Garamond', serif;
+    --font-secondary: 'Lato', sans-serif;
+
+    --transition-smooth: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* --- 2. Global Resets & Base Styles --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--color-background); /* Set base background */
+    color: var(--color-text-4); /* Set base text color */
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.menu-is-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- 3. Header & Navigation --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(73, 55, 91, 0.85); /* Deep Amethyst with opacity */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem 3rem;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease;
+}
+
+.main-header.is-hidden {
+    transform: translateY(-110%);
+}
+
+.main-header.is-scrolled {
+    background-color: rgba(73, 55, 91, 0.85); /* Deep Amethyst with opacity */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.9vh;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.nav-logo a {
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-background); /* Light text on potentially dark header */
+    text-shadow: 0 0 10px rgba(212, 183, 106, 0.3);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-button-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn.btn-primary {
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--color-lavender);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--color-lavender);
+    transition: var(--transition-smooth);
+    text-shadow: 0 0 5px rgba(212, 183, 106, 0.5);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+}
+
+.btn.btn-primary:hover {
+    color: var(--color-text);
+    background-color: var(--color-lavender);
+    box-shadow: inset 0 0 20px 0 rgba(255,255,255,0.3), 0 0 15px -5px var(--color-gold);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.nav-button-links .btn.btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+}
+
+.nav-toggle {
+    display: flex;
+    cursor: pointer;
+    width: 28px;
+    height: 21px;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1002;
+    transition: transform 0.4s ease;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-background); /* Light color for visibility */
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---
+   styles.css | Additions for Luxury Hamburger Menu
+   --- */
+
+/* --- 3.5 Slide-In Panel & Overlay (MODIFIED) --- */
+
+.slide-in-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 19.5vw; 
+    height: 100vh;
+    background-color: var(--color-text); /* Deep Amethyst for a rich, luxurious feel */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1001;
+    transform: translateX(-100%);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    justify-content: flex;
+    align-items: flex;
+    padding: 10rem 4rem;
+}
+
+.slide-in-panel.is-open {
+    transform: translateX(0);
+}
+
+.panel-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    line-height: 1;
+    color: var(--color-background);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.4s ease;
+    z-index: 1003;
+}
+
+.panel-close-btn:hover {
+    color: var(--color-gold);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.panel-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+}
+
+.panel-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.panel-divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(249, 247, 253, 0.3); /* Lavender Whisper subtle line */
+    margin: 2.5rem 0;
+}
+
+.panel-link-large {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--color-background);
+    text-transform: uppercase;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+    padding: 0.25rem;
+}
+
+.panel-link-large:hover {
+    color: var(--color-gold);
+    letter-spacing: 0.08em;
+}
+
+.panel-link-medium {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--color-lavender);
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.panel-link-medium::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-gold);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.panel-link-medium:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(25, 15, 35, 0.6); 
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.page-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 1440px) {
+    .slide-in-panel {
+        width: 25vw;
+    }
+    .panel-link-large {
+        font-size: 1.6rem;
+    }
+    .panel-link-medium {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav-toggle {
+        display: flex;
+    }
+    .nav-button-links {
+        display: none;
+    }
+    .slide-in-panel {
+        width: 100vw; 
+        padding: 8rem 2.5rem;
+    }
+    .main-header, .main-header.is-scrolled {
+        padding: 1.5rem;
+    }
+    .panel-close-btn {
+        right: 1.5rem;
+        top: 1.5rem;
+    }
+}
+
+
+/* --- 4. Hero Section & Below --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-bg-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.1);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(73, 55, 91, 0.5), transparent 50%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    animation: heroGlowIn 3s 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    opacity: 0;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: 7rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--color-background);
+    text-shadow: 0 0 10px var(--color-accent-peach), 0 0 20px var(--color-amethyst);
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--color-background);
+    text-shadow: 0 0 10px var(--color-accent-peach), 0 0 20px var(--color-amethyst);
+}
+
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 3.2rem;
+        padding: 0 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .main-header, .main-header.is-scrolled {
+        padding: 1.5rem 1rem;
+    }
+    
+    .panel-close-btn {
+        right: 1rem;
+    }
+}
+
+/* --- 5. Animations --- */
+@keyframes heroGlowIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* --- 6. Responsive Design --- */
+@media (max-width: 1024px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .main-header, .main-header.is-scrolled {
+        padding: 1.5rem;
+    }
+    
+    .nav-toggle.active span {
+        background-color: var(--color-gold);
+    }
+    .nav-toggle.active span:nth-child(1) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-9.5px) rotate(-45deg);
+    }
+
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav-logo a {
+        font-size: 1.2rem;
+        letter-spacing: 0.15em;
+    }
+    
+    .hero-title {
+        font-size: 3.2rem;
+        padding: 0 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .main-header, .main-header.is-scrolled {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* --- 9. Founder Section --- */
+.founder-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 !important; 
+}
+
+.founder-bio {
+    order: 1;
+    background-color: var(--color-background-2); /* Soft Lavender Haze */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem; 
+    text-align: center;
+}
+
+.founder-bio-content {
+    max-width: 60ch;
+}
+
+.founder-image {
+    order: 2;
+    width: 100%;
+    height: 70vh; 
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.founder-name {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.founder-title {
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-amethyst);
+    margin-bottom: 2rem;
+}
+
+.founder-bio p {
+    font-size: 1.25rem;
+    color: var(--color-text-2);
+    margin-bottom: 2rem;
+}
+
+.founder-bio .btn-primary {
+    margin-top: 1.5rem;
+    color: var(--color-text);
+    border-color: var(--color-amethyst);
+    background: var(--color-amethyst);
+    text-shadow: none;
+}
+
+.founder-bio .btn-primary:hover {
+    background: var(--color-lavender);
+    color: var(--color-text);
+    border-color: var(--color-lavender);
+    box-shadow: 0 0 25px -5px var(--color-lavender);
+    transform: translateY(-3px) scale(1.02);
+}
+
+@media (min-width: 1024px) {
+    .founder-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .founder-image {
+        order: 1; 
+        height: 105vh;
+    }
+
+    .founder-bio {
+        order: 2;
+        text-align: center; 
+        padding: 4rem;
+    }
+}
+
+/* --- 5-PANEL RESPONSIVE IMAGE GRID --- */
+.women-hero-section {
+    width: 100%;
+    height: 70vh; 
+    overflow: hidden;
+    background-color: var(--color-background);
+}
+
+.women-hero-grid {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.women-hero-grid .panel {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+}
+
+.women-hero-grid .panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .women-hero-section {
+        height: auto; 
+    }
+
+    .women-hero-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .women-hero-grid .panel {
+        box-sizing: border-box;
+        aspect-ratio: 3 / 4; 
+    }
+
+    .women-hero-grid .panel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .women-hero-grid .panel:nth-child(1),
+    .women-hero-grid .panel:nth-child(2) {
+        flex-basis: 50%;
+    }
+
+    .women-hero-grid .panel:nth-child(3),
+    .women-hero-grid .panel:nth-child(4),
+    .women-hero-grid .panel:nth-child(5) {
+        flex-basis: calc(100% / 3);
+    }
+}
+
+/* --- Retreat Video Section --- */
+.retreat-video-section {
+    width: 100%;
+    height: 95vh; 
+    overflow: hidden;
+    background-color: var(--color-background-2);
+    position: relative;
+}
+
+.retreat-video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 767px) {
+    .retreat-video-section {
+        height: 25vh; 
+    }
+}
+
+/* --- 11. Audio Control --- */
+.music-control {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1001;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(73, 55, 91, 0.7); /* Deep Amethyst transparent */
+    border: 1px solid var(--color-lavender);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+}
+
+.music-control:hover {
+    background-color: var(--color-amethyst);
+    border-color: var(--color-background);
+    transform: scale(1.1);
+}
+
+.music-control svg {
+    color: var(--color-lavender);
+    transition: color 0.3s ease;
+}
+
+.music-control:hover svg {
+    color: var(--color-background);
+}
+
+/* --- 12. Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .founder-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+    }
+    .founder-image {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 450px;
+        height: 50vh;
+    }
+    .founder-bio p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .offer-snapshot {
+        padding: 6rem 1.5rem;
+    }
+    
+    .offer-snapshot h2, .founder-name {
+        font-size: 2.5rem;
+    }
+
+    .offer-snapshot .intro, .founder-bio p {
+        font-size: 1rem;
+    }
+    .offer-grid {
+        grid-template-columns: 1fr;
+    }
+    .founder-name {
+        font-size: 3rem;
+    }
+    .music-control {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
+/* --- 13. The Circle Section --- */
+.the-circle-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 !important; 
+    background-color: var(--color-text); /* Deep amethyst background */
+    overflow: hidden;
+}
+
+.the-circle-image-container {
+    order: 2;
+    width: 100%;
+    height: 60vh;
+    position: relative;
+}
+
+.the-circle-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.the-circle-content-wrapper {
+    order: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .the-circle-section {
+        grid-template-columns: 1fr 1fr;
+    }
+    .the-circle-content-wrapper {
+        order: 1; 
+        text-align: center;
+        padding: 22rem 12rem; 
+        z-index: 2;
+    }
+    .the-circle-image-container {
+        order: 2; 
+        height: 100%;
+        position: relative;
+    }
+    .the-circle-image-container img {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.the-circle-content {
+    max-width: 60ch;
+}
+.the-circle-heading {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--color-background);
+}
+.the-circle-paragraph {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--color-lavender);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+.the-circle-content .btn-primary {
+    color: var(--color-text);
+    border-color: var(--color-lavender);
+    background-color: var(--color-lavender);
+}
+.the-circle-content .btn-primary:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+@media (max-width: 767px) {
+    .the-circle-content-wrapper {
+        padding: 3.5rem 1.5rem;
+    }
+    .the-circle-heading {
+        font-size: 2.5rem;
+    }
+    .the-circle-paragraph {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- 14. Blog Preview Section --- */
+.oracle-preview-section {
+    padding: 8rem 3rem;
+    background-color: var(--color-background); /* Lavender Whisper */
+    text-align: center;
+}
+
+.oracle-preview-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.oracle-preview-section .section-title {
+    color: var(--color-text);
+    font-size: 2.25rem;
+}
+
+.oracle-preview-section .section-intro {
+    color: var(--color-text-2);
+    margin-bottom: 3rem;
+}
+
+.oracle-preview-section .btn-primary {
+    border-color: var(--color-amethyst);
+    color: var(--color-amethyst);
+    text-shadow: none;
+}
+
+.oracle-preview-section .btn-primary:hover {
+    background: var(--color-amethyst);
+    color: var(--color-background);
+    border-color: var(--color-amethyst);
+    box-shadow: 0 0 25px -5px var(--color-amethyst);
+}
+
+@media (max-width: 767px) {
+    .oracle-preview-section {
+        padding: 6rem 1.5rem;
+    }
+}
+
+/* --- 15. The Journey Section (Luxury Wellness Retreats) --- */
+.the-journey-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 !important; 
+    background-color: var(--color-background-2); /* Soft Lavender Haze */
+}
+
+.the-journey-image-container {
+    order: 1;
+    width: 100%;
+    height: 70vh;
+}
+
+.the-journey-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.the-journey-content-wrapper {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.the-journey-content {
+    max-width: 60ch;
+}
+
+.the-journey-heading {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.the-journey-paragraph {
+    font-size: 1.2rem;
+    color: var(--color-text-2);
+    opacity: 0.8;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.the-journey-content .btn-primary {
+    color: var(--color-background);
+    border-color: var(--color-amethyst);
+    background: var(--color-amethyst);
+    text-shadow: none;
+}
+
+.the-journey-content .btn-primary:hover {
+    background: var(--color-lavender);
+    color: var(--color-text);
+    border-color: var(--color-lavender);
+    box-shadow: 0 0 25px -5px var(--color-lavender);
+}
+
+@media (min-width: 1024px) {
+    .the-journey-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .the-journey-image-container {
+        order: 1; 
+        height: 105vh;
+    }
+
+    .the-journey-content-wrapper {
+        order: 2;
+        padding: 4rem;
+    }
+
+    .the-journey-heading {
+        font-size: 3rem;
+    }
+}
+
+/* --- 16. Main Footer Structure --- */
+.main-footer {
+    background-color: var(--color-text); /* Deep Amethyst */
+    color: var(--color-background-2); /* Soft Lavender Haze */
+    padding: 5rem 3rem 1.5rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr; 
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.footer-column {
+    padding: 0 1rem;
+}
+
+.footer-links-wrapper {
+    display: contents; 
+}
+
+.footer-logo-column {
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-logo-link {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.footer-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer-heading {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 0.05em;
+    color: var(--color-background); /* Lavender Whisper */
+    margin-bottom: 1.5rem;
+}
+
+.footer-links-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-column li {
+    margin-bottom: 1rem;
+}
+
+.footer-links-column a {
+    font-size: 0.95rem;
+    color: var(--color-background-2);
+    opacity: 0.8;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-links-column a:hover {
+    color: var(--color-gold);
+    opacity: 1;
+}
+
+.footer-newsletter-column .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-form input,
+.newsletter-form button {
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid var(--color-lavender);
+    padding: 0.9rem 1.2rem;
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+}
+
+.newsletter-form input {
+    background-color: transparent;
+    color: var(--color-background);
+}
+
+.newsletter-form input::placeholder {
+    color: var(--color-background-2);
+    opacity: 0.6;
+}
+
+.newsletter-form button {
+    background-color: var(--color-lavender);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* --- 18. Footer Bottom Bar --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(249, 247, 253, 0.2);
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    color: rgba(249, 247, 253, 0.6);
+}
+
+.footer-copyright a {
+    color: rgba(249, 247, 253, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-copyright a:hover {
+    color: var(--color-gold);
+    text-decoration: underline;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.footer-socials a {
+    color: var(--color-background-2); 
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--color-gold);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.footer-socials a i {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- 19. Mobile Responsive Footer --- */
+@media (max-width: 767px) {
+    .main-footer {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+    .footer-main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    .footer-logo-column { order: 1; }
+    .footer-newsletter-column { order: 2; width: 100%; max-width: 350px; }
+    .footer-links-wrapper { order: 3; }
+    
+    .footer-links-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        width: 100%;
+    }
+    .footer-links-column {
+        text-align: left;
+    }
+    .footer-heading {
+        margin-bottom: 1rem;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .footer-socials { order: 1; }
+    .footer-copyright { order: 2; text-align: center; }
+}
