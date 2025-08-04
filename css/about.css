@@ -1,0 +1,166 @@
+/* ---
+   about.css
+   Styling for the About Trishiana page, designed to be feminine, empowering,
+   and consistent with the Sensuous-Living brand identity and color palette.
+   --- */
+
+/* --- Color Palette (Re-using from membership.css for consistency) --- */
+:root {
+    --color-base-background: #F8F4F9; /* A very soft, light lavender-pink for base background */
+    --color-text-primary: #4A305A; /* A deep, rich plum for main text and headings */
+    --color-accent-soft-purple: #D1A8E0; /* The lighter, soft purple/pink from the gradient */
+    --color-accent-rose-gold: #E0C097; /* A warm, inviting rose gold for highlights */
+    --color-accent-ethereal-blue: #BEE9E8; /* A very soft, ethereal cyan/blue for subtle accents */
+    --color-card-background: #FFFFFF; /* Pure white for card backgrounds */
+    --color-border-subtle: #E8EBF0; /* Light grey for subtle borders/dividers */
+    --color-highlight-glow: rgba(209, 168, 224, 0.5); /* A soft, shimmering glow from the light purple */
+}
+
+/* --- General Page & Section Styling --- */
+body {
+    background-color: var(--color-base-background);
+    color: var(--color-text-primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-top: 2rem;
+}
+
+.about-section {
+    padding: 4rem 0;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.about-section p {
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Center align paragraphs for a softer feel */
+}
+
+/* Alternating background for sections */
+.about-section:nth-of-type(odd) {
+    background-color: var(--color-base-background);
+}
+
+.about-section:nth-of-type(even) {
+    background-color: var(--color-border-subtle); /* A subtle contrast */
+}
+
+/* --- Hero Section Specific Styling --- */
+.about-hero-section {
+    background-image: linear-gradient(135deg, var(--color-accent-soft-purple), var(--color-accent-ethereal-blue));
+    padding: 10rem 2rem 6rem; /* Adjusted padding for hero */
+    text-align: center;
+    color: var(--color-card-background); /* White text on gradient */
+    min-height: 70vh; /* Ensure enough height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero-title {
+    font-family: var(--font-primary);
+    font-size: 4.5rem; /* Slightly smaller than membership hero title */
+    font-weight: 600;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.5rem;
+    color: var(--color-card-background);
+}
+
+.about-hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto 3rem; /* Add margin below subtitle for image */
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    color: var(--color-card-background);
+}
+
+.trishiana-image-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3; /* Ensure image is above background */
+}
+
+.trishiana-hero-image {
+    max-width: 60%; /* Adjust size as needed */
+    height: auto;
+    border-radius: 20px; /* Rounded corners for a softer look */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    object-fit: cover;
+    border: 5px solid var(--color-card-background); /* White border to frame the image */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .about-hero-title {
+        font-size: 3.5rem;
+    }
+    .about-hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .trishiana-hero-image {
+        max-width: 75%;
+    }
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .about-section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-hero-section {
+        padding: 8rem 1.5rem 4rem;
+    }
+    .about-hero-title {
+        font-size: 2.8rem;
+    }
+    .about-hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    .trishiana-hero-image {
+        max-width: 90%;
+        border-width: 3px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .about-section {
+        padding: 3rem 0;
+    }
+    .about-section p {
+        font-size: 0.95rem;
+    }
+}

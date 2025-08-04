@@ -1,0 +1,350 @@
+/* ---
+   newsletter.css
+   Styles for the "Feminine Wisdom" Newsletter CTA Page
+   Updated to reflect the feminine, empowering, and sensuous color palette,
+   with enhanced professional styling for the CTA form section.
+   --- */
+
+/* --- Color Palette (Consistent with other pages) --- */
+:root {
+    --color-base-background: #F8F4F9; /* A very soft, light lavender-pink for base background */
+    --color-text-primary: #4A305A; /* A deep, rich plum for main text and headings */
+    --color-accent-soft-purple: #D1A8E0; /* The lighter, soft purple/pink from the gradient */
+    --color-accent-rose-gold: #E0C097; /* A warm, inviting rose gold for highlights */
+    --color-accent-ethereal-blue: #BEE9E8; /* A very soft, ethereal cyan/blue for subtle accents */
+    --color-card-background: #FFFFFF; /* Pure white for card backgrounds */
+    --color-border-subtle: #E8EBF0; /* Light grey for subtle borders/dividers */
+    --color-highlight-glow: rgba(209, 168, 224, 0.5); /* A soft, shimmering glow from the light purple */
+}
+
+/* --- 1. Hero Section --- */
+.newsletter-hero {
+    /* Updated background to a soft, feminine gradient */
+    background-image: linear-gradient(135deg, var(--color-accent-soft-purple), var(--color-accent-ethereal-blue));
+    padding: 14rem 2rem 12rem;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: var(--color-card-background); /* White text on gradient */
+}
+
+.newsletter-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.newsletter-hero-title {
+    font-family: var(--font-primary);
+    font-size: 5.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.newsletter-hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-card-background); /* White subtitle */
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- 2. Main Content & Intro --- */
+.newsletter-main {
+    padding: 6rem 2rem;
+    background-color: var(--color-base-background); /* Soft base background */
+}
+
+.newsletter-container {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.25rem;
+    color: var(--color-text-primary); /* Deep plum text */
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.intro-text strong {
+    color: var(--color-text-primary); /* Deep plum for strong text */
+    font-weight: 600;
+}
+
+.divider {
+    width: 100px;
+    height: 2px;
+    /* Updated gradient for divider */
+    background: linear-gradient(90deg, var(--color-accent-soft-purple), var(--color-accent-rose-gold));
+    margin: 3rem auto;
+    border: 0;
+}
+
+/* --- 3. Features Grid ("What Awaits You") --- */
+.features-section .section-title {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    color: var(--color-text-primary); /* Deep plum title */
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    text-align: left;
+}
+
+.feature-card {
+    background-color: var(--color-card-background); /* White card background */
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border-subtle); /* Subtle border */
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-accent-rose-gold); /* Rose gold icons */
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-text-primary); /* Deep plum heading */
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: var(--color-text-primary); /* Deep plum paragraph text */
+    line-height: 1.7;
+}
+
+/* --- 4. "Why Subscribe" Section --- */
+.why-subscribe-section {
+    background-color: var(--color-border-subtle); /* Alternating background */
+    padding: 5rem 2rem;
+    margin-top: 6rem;
+    border-radius: 15px;
+}
+
+.why-subscribe-section h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    color: var(--color-text-primary); /* Deep plum heading */
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.why-subscribe-list {
+    list-style: none;
+    padding: 0;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.why-subscribe-list li {
+    font-size: 1.2rem;
+    color: var(--color-text-primary); /* Deep plum list item text */
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.why-subscribe-list i {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--color-accent-ethereal-blue); /* Ethereal blue icons */
+    margin-top: 5px;
+}
+
+/* --- 5. Quote Section --- */
+.quote-section {
+    margin: 5rem auto;
+    max-width: 750px;
+    text-align: center;
+}
+
+.quote-section blockquote {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--color-text-primary); /* Deep plum quote text */
+    line-height: 1.4;
+    position: relative;
+    padding: 0 3rem;
+}
+
+.quote-section blockquote::before,
+.quote-section blockquote::after {
+    content: '“';
+    font-size: 6rem;
+    color: var(--color-accent-soft-purple); /* Soft purple quote marks */
+    position: absolute;
+    line-height: 1;
+}
+
+.quote-section blockquote::before {
+    top: -1rem;
+    left: 0;
+}
+
+.quote-section blockquote::after {
+    content: '”';
+    bottom: -3rem;
+    right: 0;
+}
+
+.quote-section cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-style: normal;
+    color: var(--color-text-primary); /* Deep plum cite text */
+}
+
+/* --- 6. CTA Form Section (Enhanced Professional Styling) --- */
+.cta-form-section {
+    background-color: var(--color-text-primary); /* Deep plum background for CTA */
+    color: var(--color-card-background); /* White text on deep plum */
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative; /* Needed for pseudo-element */
+    overflow: hidden; /* Ensures glow stays within bounds */
+}
+
+/* Adding a subtle, ethereal background glow to the CTA section */
+.cta-form-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(209, 168, 224, 0.2) 0%, transparent 70%); /* Soft purple glow */
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.8;
+    animation: pulseGlow 5s infinite alternate; /* Subtle animation */
+}
+
+@keyframes pulseGlow {
+    from { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+
+.cta-form-section h2 {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative; /* Ensure text is above pseudo-element */
+    z-index: 1;
+}
+
+.cta-form-section p {
+    color: var(--color-accent-soft-purple); /* Soft purple text for description */
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; /* Ensure text is above pseudo-element */
+    z-index: 1;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 550px;
+    margin: 0 auto;
+    position: relative; /* Ensure form elements are above pseudo-element */
+    z-index: 1;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    /* Professional input styling */
+    border: 1px solid var(--color-accent-soft-purple); /* Soft purple border */
+    background-color: var(--color-card-background); /* Solid white background for clarity */
+    color: var(--color-text-primary); /* Deep plum text for input */
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Subtle inner shadow */
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--color-accent-rose-gold); /* Rose gold on focus */
+    box-shadow: 0 0 0 3px rgba(224, 192, 151, 0.4); /* Soft rose gold glow on focus */
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(74, 48, 90, 0.6); /* Deep plum placeholder with transparency */
+}
+
+.newsletter-form .btn-primary {
+    /* Enhanced button styling for professionalism */
+    padding: 1rem 2.5rem; /* More generous padding */
+    background-color: var(--color-accent-rose-gold); /* Rose gold background */
+    border-color: var(--color-accent-rose-gold);
+    color: var(--color-text-primary); /* Deep plum text on rose gold button */
+    text-shadow: none;
+    white-space: nowrap;
+    border-radius: 50px; /* Ensure rounded corners */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* More pronounced shadow */
+    transition: all 0.3s ease;
+}
+
+.newsletter-form .btn-primary:hover {
+    background-color: var(--color-accent-soft-purple); /* Soft purple on hover */
+    border-color: var(--color-accent-soft-purple);
+    color: var(--color-card-background); /* White text on hover */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+/* --- 7. Responsive Adjustments --- */
+@media (max-width: 767px) {
+    .newsletter-hero {
+        padding: 10rem 1.5rem 8rem;
+    }
+    .newsletter-hero-title {
+        font-size: 3.5rem;
+    }
+    .newsletter-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .newsletter-main {
+        padding: 4rem 1.5rem;
+    }
+    .features-section .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+    .newsletter-form {
+        flex-direction: column;
+        gap: 0.75rem; /* Slightly reduced gap for stacked elements */
+    }
+    .newsletter-form input,
+    .newsletter-form .btn-primary {
+        width: 100%; /* Full width when stacked */
+        max-width: none; /* Remove max-width restriction */
+    }
+}

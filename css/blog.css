@@ -1,0 +1,275 @@
+/* ---
+   blog.css
+   Styles for The Sensuous-Living Blog Page, designed to be feminine, empowering,
+   and cohesive with the Sensuous-Living site's new color palette.
+   --- */
+
+/* --- Color Palette (Consistent with membership.css) --- */
+:root {
+    --color-base-background: #F8F4F9; /* A very soft, light lavender-pink for base background */
+    --color-text-primary: #4A305A; /* A deep, rich plum for main text and headings */
+    --color-accent-soft-purple: #D1A8E0; /* The lighter, soft purple/pink from the gradient */
+    --color-accent-rose-gold: #E0C097; /* A warm, inviting rose gold for highlights */
+    --color-accent-ethereal-blue: #BEE9E8; /* A very soft, ethereal cyan/blue for subtle accents */
+    --color-card-background: #FFFFFF; /* Pure white for card backgrounds */
+    --color-border-subtle: #E8EBF0; /* Light grey for subtle borders/dividers */
+    --color-highlight-glow: rgba(209, 168, 224, 0.5); /* A soft, shimmering glow from the light purple */
+}
+
+/* --- 1. General Container --- */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- 2. Blog Hero Section --- */
+.blog-hero {
+    /* Using the soft gradient for the hero background */
+    background-image: linear-gradient(135deg, var(--color-accent-soft-purple), var(--color-accent-ethereal-blue));
+    text-align: center;
+    padding: 8rem 2rem 6rem; /* Adjusted padding to make space for the image */
+    position: relative;
+    overflow: hidden;
+    color: var(--color-card-background); /* White text on gradient */
+    display: flex; /* Use flexbox for vertical centering */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Keeping a subtle texture for depth */
+    background-image: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+    opacity: 0.1; /* Slightly more visible texture */
+    z-index: 1;
+}
+
+.blog-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex; /* Enable flexbox for content alignment */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-hero-title {
+    font-family: var(--font-primary);
+    font-size: 6rem;
+    font-weight: 600;
+    color: var(--color-card-background); /* White title */
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    margin-bottom: 1rem;
+}
+
+.blog-hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--color-card-background); /* White subtitle */
+    line-height: 1.7;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    margin-bottom: 3rem; /* Space below subtitle for the image */
+}
+
+/* New style for the blog hero image */
+.blog-hero-image {
+    max-width: 80%; /* Adjust size as needed */
+    height: auto;
+    border-radius: 15px; /* Rounded corners for softness */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    object-fit: cover;
+    display: block; /* Ensure it behaves as a block element */
+    margin-top: 2rem; /* Space above the image */
+}
+
+
+/* --- 3. Blog Introduction and Topics Section --- */
+.blog-intro-topics-section {
+    padding: 6rem 0;
+    background-color: var(--color-base-background); /* Soft background */
+    text-align: center;
+}
+
+.blog-intro-topics-section .container {
+    max-width: 900px;
+}
+
+.intro-text, .outro-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--color-text-primary); /* Deep plum text */
+    margin-bottom: 2rem;
+}
+
+.topic-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the list items */
+    gap: 1rem;
+}
+
+.topic-list li {
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--color-card-background); /* White background for list items */
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topic-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.topic-list li i {
+    color: var(--color-accent-rose-gold); /* Rose gold icons */
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* --- Placeholder for Blog Posts Grid (if you add posts later) --- */
+.blog-posts-grid-placeholder {
+    padding: 6rem 0;
+    background-color: var(--color-border-subtle); /* Alternating background */
+    text-align: center;
+}
+
+.blog-posts-grid-placeholder .section-title {
+    color: var(--color-text-primary);
+    margin-bottom: 3rem;
+}
+
+.grid-placeholder {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.blog-card-placeholder {
+    background-color: var(--color-card-background);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+}
+
+.blog-card-placeholder:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.blog-card-placeholder h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.blog-card-placeholder p {
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.blog-card-placeholder .btn-placeholder {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border: 1px solid var(--color-accent-rose-gold);
+    border-radius: 30px;
+    color: var(--color-accent-rose-gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.blog-card-placeholder .btn-placeholder:hover {
+    background-color: var(--color-accent-rose-gold);
+    color: var(--color-card-background);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .blog-hero-title {
+        font-size: 4.5rem;
+    }
+    .blog-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .blog-hero-image {
+        max-width: 90%;
+    }
+    .intro-text, .outro-text {
+        font-size: 1.1rem;
+    }
+    .topic-list li {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+    }
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    .blog-hero {
+        padding: 10rem 1.5rem 6rem;
+    }
+    .blog-hero-title {
+        font-size: 3.2rem;
+    }
+    .blog-hero-subtitle {
+        font-size: 1rem;
+    }
+    .blog-hero-image {
+        max-width: 100%;
+    }
+    .blog-intro-topics-section, .blog-posts-grid-placeholder {
+        padding: 4rem 1.5rem;
+    }
+    .intro-text, .outro-text {
+        font-size: 1rem;
+    }
+    .topic-list li {
+        font-size: 0.95rem;
+        padding: 0.6rem 1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .blog-card-placeholder h3 {
+        font-size: 1.5rem;
+    }
+    .blog-card-placeholder p {
+        font-size: 0.9rem;
+    }
+}

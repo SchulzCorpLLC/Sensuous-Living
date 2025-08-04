@@ -1,0 +1,243 @@
+/* ---
+   membership.css
+   A complete redesign for a luxurious, cohesive, and visually stunning Membership Page.
+   This file is crafted to work seamlessly with styles.css.
+   Updated to reflect a feminine and empowering color palette from the image,
+   emphasizing softer purples, pinks, and subtle, ethereal cyan/blue accents.
+   --- */
+
+/* --- New Feminine & Empowering Color Palette (for main content) --- */
+:root {
+    --color-base-background: #F8F4F9; /* A very soft, light lavender-pink for base background */
+    --color-text-primary: #4A305A; /* A deep, rich plum for main text and headings */
+    --color-accent-soft-purple: #D1A8E0; /* The lighter, soft purple/pink from the gradient */
+    --color-accent-rose-gold: #E0C097; /* A warm, inviting rose gold for highlights */
+    --color-accent-ethereal-blue: #BEE9E8; /* A very soft, ethereal cyan/blue for subtle accents */
+    --color-card-background: #FFFFFF; /* Pure white for card backgrounds */
+    --color-border-subtle: #E8EBF0; /* Light grey for subtle borders/dividers */
+    --color-highlight-glow: rgba(209, 168, 224, 0.5); /* A soft, shimmering glow from the light purple */
+}
+
+/* --- 1. General Page & Section Styling --- */
+.container {
+    max-width: 1200px; /* Ensure a consistent max-width for content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-top: 2rem;
+}
+
+/* --- 2. Membership Hero Section --- */
+.membership-hero {
+    /* Background gradient using the vibrant, feminine colors from the image */
+    background-image: linear-gradient(135deg, var(--color-accent-soft-purple), var(--color-accent-ethereal-blue));
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 10rem 2rem 6rem; /* Adjusted padding for new content */
+    color: var(--color-card-background); /* White text on the vibrant background */
+    min-height: 70vh; /* Adjusted minimum height */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.membership-hero-content {
+    max-width: 900px; /* Constrain hero content width */
+    margin: 0 auto; /* Center hero content */
+    position: relative;
+    z-index: 2;
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column;
+    align-items: center; /* Center items horizontally within hero content */
+}
+
+.membership-hero-title {
+    font-family: var(--font-primary);
+    font-size: 5.5rem;
+    font-weight: 600;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+.membership-hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--color-card-background); /* Lighter text for subtitle */
+    line-height: 1.8;
+    max-width: 750px; /* Constrain subtitle width */
+    margin: 0 auto 3rem; /* Center subtitle and add space below for image */
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.membership-hero-image {
+    max-width: 80%; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 2rem auto 0 auto; /* Center image with margin above */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+/* --- 3. Inner Circle Intro Section (Body Copy) --- */
+.inner-circle-intro-section {
+    padding: 6rem 0;
+    background-color: var(--color-base-background); /* Soft base background */
+    text-align: center;
+}
+
+.inner-circle-intro-section .intro-paragraph {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--color-text-primary); /* Deep plum text */
+    max-width: 800px; /* Constrain paragraph width */
+    margin: 0 auto 1.5rem auto; /* Center paragraphs and add spacing */
+}
+
+.inner-circle-intro-section .intro-paragraph strong {
+    color: var(--color-text-primary); /* Deep plum for strong text */
+    font-weight: 600;
+}
+
+/* --- 4. Membership Benefits Section --- */
+.membership-benefits-section {
+    padding: 4rem 0;
+    background-color: var(--color-border-subtle); /* Alternating background */
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    max-width: 800px; /* Constrain list width */
+    margin: 0 auto; /* Center the list */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align list items to the left */
+    gap: 1.2rem;
+}
+
+.benefits-list li {
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: flex-start; /* Align icon to top of text */
+    gap: 1rem;
+    line-height: 1.5;
+}
+
+.benefits-list li i {
+    width: 24px;
+    height: 24px;
+    color: var(--color-accent-rose-gold); /* Rose gold checkmarks */
+    flex-shrink: 0;
+    margin-top: 0.2rem; /* Adjust icon vertical alignment */
+}
+
+/* --- 5. Call to Action Section --- */
+.membership-cta-section {
+    padding: 6rem 0;
+    background-image: linear-gradient(135deg, var(--color-accent-soft-purple), var(--color-accent-ethereal-blue)); /* Gradient background for CTA */
+    text-align: center;
+    color: var(--color-card-background); /* White text */
+}
+
+.membership-cta-section .cta-title {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-card-background); /* White title */
+}
+
+.membership-cta-section .cta-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 2px solid var(--color-card-background); /* White border */
+    border-radius: 50px;
+    background: transparent;
+    color: var(--color-card-background); /* White text */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Soft shadow */
+}
+
+.membership-cta-section .cta-button:hover {
+    background-color: var(--color-card-background); /* White background on hover */
+    color: var(--color-text-primary); /* Deep plum text on hover */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Enhanced shadow on hover */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .membership-hero-title {
+        font-size: 4.5rem;
+    }
+    .membership-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .membership-hero-image {
+        max-width: 90%;
+    }
+    .inner-circle-intro-section .intro-paragraph {
+        font-size: 1.1rem;
+    }
+    .benefits-list li {
+        font-size: 1rem;
+    }
+    .membership-cta-section .cta-title {
+        font-size: 3rem;
+    }
+    .membership-cta-section .cta-button {
+        padding: 0.8rem 2.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .membership-hero {
+        padding: 8rem 1.5rem 4rem;
+    }
+    .membership-hero-title {
+        font-size: 3.2rem;
+    }
+    .membership-hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    .membership-hero-image {
+        max-width: 100%;
+    }
+    .inner-circle-intro-section, .membership-benefits-section, .membership-cta-section {
+        padding: 4rem 1.5rem;
+    }
+    .inner-circle-intro-section .intro-paragraph {
+        font-size: 1rem;
+    }
+    .benefits-list li {
+        font-size: 0.95rem;
+    }
+    .benefits-list li i {
+        width: 20px;
+        height: 20px;
+    }
+    .membership-cta-section .cta-title {
+        font-size: 2.5rem;
+    }
+    .membership-cta-section .cta-button {
+        padding: 0.7rem 2rem;
+        font-size: 0.9rem;
+    }
+}

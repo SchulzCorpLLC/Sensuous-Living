@@ -1,0 +1,398 @@
+/* ---
+   shop.css
+   Styles for the Sensuous-Living Collections Shop Page,
+   reworked to be feminine, empowering, and consistent with the site's new color palette.
+   --- */
+
+/* --- Color Palette (Consistent with membership.css and blog.css) --- */
+:root {
+    --color-base-background: #F8F4F9; /* A very soft, light lavender-pink for base background */
+    --color-text-primary: #4A305A; /* A deep, rich plum for main text and headings */
+    --color-accent-soft-purple: #D1A8E0; /* The lighter, soft purple/pink from the gradient */
+    --color-accent-rose-gold: #E0C097; /* A warm, inviting rose gold for highlights */
+    --color-accent-ethereal-blue: #BEE9E8; /* A very soft, ethereal cyan/blue for subtle accents */
+    --color-card-background: #FFFFFF; /* Pure white for card backgrounds */
+    --color-border-subtle: #E8EBF0; /* Light grey for subtle borders/dividers */
+    --color-highlight-glow: rgba(209, 168, 224, 0.5); /* A soft, shimmering glow from the light purple */
+}
+
+/* --- General Page & Section Styling --- */
+body {
+    background-color: var(--color-base-background);
+    color: var(--color-text-primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-top: 2rem;
+}
+
+/* --- 1. Hero Section --- */
+.shop-hero {
+    background-image: linear-gradient(135deg, var(--color-accent-soft-purple), var(--color-accent-ethereal-blue));
+    padding: 10rem 2rem 6rem; /* Adjusted padding for hero */
+    text-align: center;
+    color: var(--color-card-background); /* White text on gradient */
+    min-height: 70vh; /* Ensure enough height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-hero-content {
+    max-width: 950px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shop-hero-title {
+    font-family: var(--font-primary);
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    color: var(--color-card-background);
+}
+
+.shop-hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-card-background);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3rem; /* Space for the image */
+}
+
+.shop-hero-image {
+    max-width: 80%; /* Adjust size as needed */
+    height: auto;
+    border-radius: 15px; /* Rounded corners for softness */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    object-fit: cover;
+    display: block;
+    margin-top: 2rem; /* Space above the image */
+}
+
+/* --- 2. Introduction Section --- */
+.shop-intro-section {
+    padding: 6rem 0;
+    background-color: var(--color-base-background);
+    text-align: center;
+}
+
+.shop-intro-section .container {
+    max-width: 900px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.intro-text-secondary {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+    margin-top: 3rem;
+    font-style: italic;
+}
+
+/* --- 3. Product Categories Section --- */
+.shop-categories-section {
+    padding: 4rem 0;
+    background-color: var(--color-border-subtle); /* Alternating background */
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.category-card {
+    background-color: var(--color-card-background);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.category-card i {
+    width: 48px;
+    height: 48px;
+    color: var(--color-accent-rose-gold); /* Rose gold icons for categories */
+    margin-bottom: 1.5rem;
+}
+
+.category-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.category-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+}
+
+/* --- 4. Comparison Section --- */
+.shop-comparison-section {
+    padding: 6rem 0;
+    background-color: var(--color-base-background);
+}
+
+.shop-comparison-section .section-title {
+    margin-bottom: 4rem;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.5px 1fr;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    align-items: center;
+}
+
+.comparison-divider {
+    width: 0.5px;
+    height: 80%;
+    background-color: var(--color-border-subtle);
+    justify-self: center;
+}
+
+.comparison-column {
+    text-align: center;
+}
+
+.comparison-column h3 {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.comparison-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comparison-column li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+.comparison-column.empowered h3 {
+    color: var(--color-text-primary);
+}
+
+.comparison-column.empowered strong {
+    color: var(--color-accent-rose-gold); /* Rose gold for emphasis */
+    font-weight: 600;
+}
+
+.comparison-outro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+}
+
+/* --- 5. For the Woman Who Section --- */
+.for-woman-section {
+    padding: 6rem 0;
+    background-color: var(--color-border-subtle); /* Alternating background */
+    text-align: center;
+}
+
+.for-woman-section .section-title {
+    margin-bottom: 3rem;
+}
+
+.woman-qualities-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.woman-qualities-list li {
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--color-card-background);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.woman-qualities-list li i {
+    color: var(--color-accent-ethereal-blue); /* Ethereal blue checkmarks */
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.quote {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--color-accent-rose-gold); /* Rose gold for the quote */
+    margin: 4rem auto;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+.shop-now-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--color-accent-rose-gold);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--color-accent-rose-gold);
+    transition: all 0.3s ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.shop-now-btn:hover {
+    background-color: var(--color-accent-rose-gold);
+    color: var(--color-card-background);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .shop-hero-title {
+        font-size: 4rem;
+    }
+    .shop-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .shop-hero-image {
+        max-width: 90%;
+    }
+    .intro-text, .intro-text-secondary {
+        font-size: 1.1rem;
+    }
+    .category-card h3 {
+        font-size: 1.6rem;
+    }
+    .category-card p {
+        font-size: 0.95rem;
+    }
+    .comparison-column h3 {
+        font-size: 1.8rem;
+    }
+    .comparison-column li {
+        font-size: 1rem;
+    }
+    .comparison-outro {
+        font-size: 1rem;
+    }
+    .woman-qualities-list li {
+        font-size: 1rem;
+    }
+    .quote {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .shop-hero {
+        padding: 8rem 1.5rem 4rem;
+    }
+    .shop-hero-title {
+        font-size: 3rem;
+    }
+    .shop-hero-subtitle {
+        font-size: 1rem;
+    }
+    .shop-hero-image {
+        max-width: 100%;
+    }
+    .shop-intro-section, .shop-categories-section, .shop-comparison-section, .for-woman-section {
+        padding: 4rem 1.5rem;
+    }
+    .intro-text, .intro-text-secondary {
+        font-size: 1rem;
+    }
+    .category-card {
+        padding: 1.5rem;
+    }
+    .category-card h3 {
+        font-size: 1.4rem;
+    }
+    .category-card i {
+        width: 40px;
+        height: 40px;
+    }
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .comparison-divider {
+        width: 60%;
+        height: 0.5px;
+        margin: 1.5rem auto;
+    }
+    .comparison-column h3 {
+        font-size: 1.6rem;
+    }
+    .comparison-column li {
+        font-size: 0.95rem;
+    }
+    .woman-qualities-list li {
+        font-size: 0.95rem;
+    }
+    .quote {
+        font-size: 1.2rem;
+    }
+    .shop-now-btn {
+        padding: 0.8rem 2rem;
+        font-size: 0.85rem;
+    }
+}
