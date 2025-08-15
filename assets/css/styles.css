@@ -1068,10 +1068,16 @@ ul {
     opacity: 1;
 }
 
+.footer-newsletter-column {
+    text-align: center;
+}
+
 .footer-newsletter-column .newsletter-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 350px; /* Constrain form width on desktop */
+    margin: 0 auto; /* Center the form block */
 }
 
 .newsletter-form input,
@@ -1171,7 +1177,7 @@ ul {
         order: 2; 
         width: 100%; 
         max-width: 350px; 
-        text-align: center; /* This is the fix */
+        text-align: center;
     }
     .footer-links-wrapper { order: 3; }
 

@@ -41,9 +41,9 @@
                     <input type="email" name="email" placeholder="Email Address" required>
                     <button type="submit">Subscribe Now</button>
                 </form>
-                <a id="downloadLink" href="/assets/pdfs/sex-spirituality-journal.pdf" target="_blank" style="display:none; margin-top:10px; display:block; font-weight:bold; color:#ff3388;">
-                    Click here to download your journal
-                </a>
+                <p id="thankYouMessage" style="display:none; margin-top:10px; font-weight:bold; color:#ff3388;">
+                    Thank you for subscribing! Your journal should start downloading.
+                </p>
             </div>
         </div>
 
@@ -64,7 +64,7 @@
     <!-- Newsletter form JS -->
     <script>
         const form = document.getElementById('newsletterForm');
-        const downloadLink = document.getElementById('downloadLink');
+        const thankYouMessage = document.getElementById('thankYouMessage');
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -78,8 +78,21 @@
                 }
             }).then(response => {
                 if (response.ok) {
+                    // Hide the form
                     form.style.display = 'none';
-                    downloadLink.style.display = 'block';
+
+                    // Show thank you message
+                    thankYouMessage.style.display = 'block';
+
+                    // Auto-download the PDF
+                    const pdfUrl = '/assets/pdfs/sex-spirituality-journal.pdf';
+                    const link = document.createElement('a');
+                    link.href = pdfUrl;
+                    link.download = 'Sex & Spirituality Journal.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
                 } else {
                     alert("There was a problem submitting your email. Please try again.");
                 }
