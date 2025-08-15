@@ -1,9 +1,9 @@
 /* ---
-   styles.css
-   Feminine Sensuality - Spiritual & Meditative Redesign
-   Updated to reflect the feminine, empowering, and sensuous color palette
-   consistent across the entire site, with an opaque deep purple navbar.
-   --- */
+    styles.css
+    Feminine Sensuality - Spiritual & Meditative Redesign
+    Updated to reflect the feminine, empowering, and sensuous color palette
+    consistent across the entire site, with an opaque deep purple navbar.
+    --- */
 
 /* --- 1. Root & Feminine & Empowering Color Palette --- */
 :root {
@@ -1167,7 +1167,12 @@ ul {
         margin-bottom: 2.5rem;
     }
     .footer-logo-column { order: 1; }
-    .footer-newsletter-column { order: 2; width: 100%; max-width: 350px; }
+    .footer-newsletter-column { 
+        order: 2; 
+        width: 100%; 
+        max-width: 350px; 
+        text-align: center; /* This is the fix */
+    }
     .footer-links-wrapper { order: 3; }
 
     .footer-links-wrapper {
@@ -1184,8 +1189,10 @@ ul {
     }
     .footer-bottom {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem; /* Added gap for spacing */
+        text-align: center; /* Center text in the bottom bar */
     }
-    .footer-socials { order: 1; }
-    .footer-copyright { order: 2; text-align: center; }
+    .footer-socials {
+        order: -1; /* Move social icons above copyright */
+    }
 }
